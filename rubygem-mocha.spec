@@ -1,49 +1,55 @@
-%define oname mocha
+# Generated from mocha-0.9.12.gem by gem2rpm5 -*- rpm-spec -*-          
+%define	rbname	mocha
 
-Name:       rubygem-%{oname}
-Version:    0.9.10
-Release:    %mkrel 1
-Summary:    Mocking and stubbing library
-Group:      Development/Ruby
-License:    MIT
-URL:        http://mocha.rubyforge.org
-Source0:    http://rubygems.org/gems/%{oname}-%{version}.gem
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
-Requires:   rubygems
-Requires:   ruby-rake
-BuildRequires: rubygems
-BuildArch:  noarch
-Provides:   rubygem(%{oname}) = %{version}
+Summary:	Mocking and stubbing library
+Name:		rubygem-%{rbname}
+
+Version:	0.9.12
+Release:	1
+Group:		Development/Ruby
+License:	GPLv2+ or Ruby
+URL:		http://mocha.rubyforge.org
+Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
+BuildRequires:	rubygems 
+BuildArch:	noarch
 
 %description
 Mocking and stubbing library with JMock/SchMock syntax, which allows
 mocking and stubbing of methods on real (non-mock) classes.
 
+%package	doc
+Summary:	Documentation for %{name}
+Group:		Books/Computer books
+Requires:	%{name} = %{EVRD}
+BuildArch:	noarch
+
+%description	doc
+Documents, RDoc & RI documentation for %{name}.
 
 %prep
+%setup -q
 
 %build
+%gem_build -f '(examples|test)/'
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{ruby_gemdir}
-gem install --local --install-dir %{buildroot}%{ruby_gemdir} \
-            --force --rdoc %{SOURCE0}
+%gem_install
 
 %clean
 rm -rf %{buildroot}
 
 %files
-%defattr(-, root, root, -)
-%dir %{ruby_gemdir}/gems/%{oname}-%{version}/
-%{ruby_gemdir}/gems/%{oname}-%{version}/examples/
-%{ruby_gemdir}/gems/%{oname}-%{version}/lib/
-%{ruby_gemdir}/gems/%{oname}-%{version}/test/
-%doc %{ruby_gemdir}/doc/%{oname}-%{version}
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/MIT-LICENSE.rdoc
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/RELEASE.rdoc
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/Rakefile
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/README.rdoc
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/COPYING.rdoc
-%{ruby_gemdir}/cache/%{oname}-%{version}.gem
-%{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*
+%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+
+%files doc
+%doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
+%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/examples
+%{ruby_gemdir}/gems/%{rbname}-%{version}/examples/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
+%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*
+
