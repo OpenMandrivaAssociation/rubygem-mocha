@@ -4,7 +4,7 @@
 Summary:	Mocking and stubbing library
 Name:		rubygem-%{rbname}
 
-Version:	0.9.12
+Version:	0.10.5
 Release:	1
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
@@ -33,11 +33,7 @@ Documents, RDoc & RI documentation for %{name}.
 %gem_build -f '(examples|test)/'
 
 %install
-rm -rf %{buildroot}
 %gem_install
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
