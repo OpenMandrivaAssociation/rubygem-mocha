@@ -44,7 +44,7 @@ Documents, RDoc & RI documentation for %{name}.
 
 %files doc
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
-%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
+# %doc %{ruby_gemdir}/doc/%{rbname}-%{version}
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/examples
 %{ruby_gemdir}/gems/%{rbname}-%{version}/examples/*.rb
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
