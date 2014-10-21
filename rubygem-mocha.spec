@@ -38,14 +38,14 @@ Documents, RDoc & RI documentation for %{name}.
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*
 %{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
 
 %files doc
 %doc %{ruby_gemdir}/gems/%{rbname}-%{version}/*.rdoc
 # %doc %{ruby_gemdir}/doc/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/examples
-%{ruby_gemdir}/gems/%{rbname}-%{version}/examples/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
-%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/examples
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/examples/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/test/*
