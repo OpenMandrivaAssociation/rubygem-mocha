@@ -4,12 +4,12 @@
 Summary:	Mocking and stubbing library
 Name:		rubygem-%{rbname}
 
-Version:	0.10.5
+Version:	1.1.0
 Release:	1
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		http://mocha.rubyforge.org
-Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
+Source0:	http://rubygems.org/gems/mocha-1.1.0.gem
 Source1:        %{name}.rpmlintrc
 BuildRequires:	rubygems 
 BuildArch:	noarch
@@ -49,18 +49,3 @@ Documents, RDoc & RI documentation for %{name}.
 %{ruby_gemdir}/gems/%{rbname}-%{version}/examples/*.rb
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
 %{ruby_gemdir}/gems/%{rbname}-%{version}/test/*
-
-
-
-%changelog
-* Wed Feb 29 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.10.5-1
-+ Revision: 781468
-- version update 0.10.5
-
-  + Per Øyvind Karlsen <peroyvind@mandriva.org>
-    - imported package rubygem-mocha
-
-* Wed Dec 01 2010 Rémy Clouard <shikamaru@mandriva.org> 0.9.10-1mdv2011.0
-+ Revision: 604612
-- import rubygem-mocha
-
