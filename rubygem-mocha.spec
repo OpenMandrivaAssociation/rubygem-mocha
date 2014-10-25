@@ -18,10 +18,10 @@ Mocking and stubbing library with JMock/SchMock syntax, which allows
 mocking and stubbing of methods on real (non-mock) classes.
 
 %files
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*
-%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+%dir %{gem_dir}/gems/%{rbname}-%{version}
+%dir %{gem_dir}/gems/%{rbname}-%{version}/lib
+%{gem_dir}/gems/%{rbname}-%{version}/lib/*
+%{gem_dir}/specifications/%{rbname}-%{version}.gemspec
 
 #----------------------------------------------------------------------------
 
@@ -35,9 +35,9 @@ BuildArch:	noarch
 Documents, RDoc & RI documentation for %{name}.
 
 %files doc
-%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
-%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*
+%doc %{gem_dir}/doc/%{rbname}-%{version}
+%dir %{gem_dir}/gems/%{rbname}-%{version}/test
+%{gem_dir}/gems/%{rbname}-%{version}/test/*
 
 #----------------------------------------------------------------------------
 
