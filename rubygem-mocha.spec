@@ -7,7 +7,7 @@ Version:	1.1.0
 Release:	2
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
-Url:		http://mocha.rubyforge.org
+Url:		https://mocha.rubyforge.org
 Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
 Source1:	%{name}.rpmlintrc
 BuildRequires:	rubygems
